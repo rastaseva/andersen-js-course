@@ -15,3 +15,23 @@
  * console.log(arrayDiff([1, 2, 3], [1, 2, 4])); -> [3, 4]
  * console.log(arrayDiff([1, 3, 3, 4], [1, 3, '4'])); -> [4, '4']
  */
+
+
+export function arrayDiff(arr1, arr2) {
+    const arr3 = arr1.concat(arr2).reduce((acc, i) => {
+            if (acc.get(i)) {
+                acc.set(i, 2)
+            } else {
+                acc.set(i, 1)
+            }
+            return acc
+        },
+        new Map())
+    const res = []
+    for (let key of arr3) {
+        if (key[1] === 1) {
+            res.push(key[0])
+        }
+    }
+    return res
+}

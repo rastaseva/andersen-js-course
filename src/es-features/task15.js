@@ -1,4 +1,5 @@
-﻿﻿﻿﻿﻿/**
+﻿﻿﻿﻿﻿
+/**
  * Написать функцию, которая принимает массив с внутренними массивами, которая вернет объект и соберет свойства этого объект на основании внутренних массивов.
  *
  * Пример вызова
@@ -6,14 +7,16 @@
  */
 
 export function task15Old(arr) {
-  return arr.reduce((a, [key, val]) => {
-    a[key] = val;
-    return a;
-  }, {});
+    return arr.reduce((a, [key, val]) => {
+        a[key] = val;
+        return a;
+    }, {});
 }
 
 // Напишите реализацию функции task15Old на ESnext ниже этого комментария.
 // При желании, можете использовать стрелочную функцию, вместо обычной
 
-export function task15New() {
-}
+export const task15New = (arr) => arr.reduce((acc, [key, value]) => {
+    acc[key] = value;
+    return acc;
+}, {})

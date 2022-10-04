@@ -15,3 +15,17 @@
  * generator.next(); -> 'Complete!'
  * generator.next(); -> 'Complete!'
  */
+
+export function createGenerator(arr) {
+    const innerArr = arr.slice() // для иммутабельности исходного массива
+    return {
+        next: function() {
+            if (!innerArr.length) {
+                return 'Complete!'
+            }
+            return innerArr.shift();
+        }
+    }
+
+
+}

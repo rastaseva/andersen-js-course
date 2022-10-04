@@ -9,11 +9,11 @@
  */
 
 export function task2Old(a, b) {
-  var data = Array.prototype.slice.call(arguments, 2);
-  return (a + b) * data.length;
+    var data = Array.prototype.slice.call(arguments, 2);
+    return (a + b) * data.length;
 }
 
 // Напишите реализацию функции task2Old на ES6+ ниже этого комментария.
 // При желании, можете использовать стрелочную функцию, вместо обычной
 
-export function task2New() {}
+export const task2New = (a, b, ...rest) => (a + b) * rest.length

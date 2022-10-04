@@ -11,3 +11,26 @@
  * console.log(without([2, 1, 2, 3], 1, 2)) -> [3]
  * console.log(without([2, 1, 10, 20], 1, 2)) -> [10, 20]
  */
+
+
+export function without(arr, ...rest) {
+    const arr2 = arr.concat(rest).reduce((acc, i) => {
+            if (acc.get(i)) {
+                acc.set(i, 2)
+            } else {
+                acc.set(i, 1)
+            }
+            return acc
+        },
+        new Map())
+    const res = []
+    for (let key of arr2) {
+        if (key[1] === 1) {
+            res.push(key[0])
+        }
+    }
+    return res
+}
+
+console.log(without([2, 1, 2, 3], 1, 2))
+console.log(without([2, 1, 10, 20], 1, 2))

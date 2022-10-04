@@ -12,10 +12,10 @@
  */
 
 export function task12Old(object, firstFieldName, secondFieldName) {
-  return object[firstFieldName] && object[firstFieldName][secondFieldName];
+    return object[firstFieldName] && object[firstFieldName][secondFieldName];
 }
 
 // Напишите реализацию функции task2Old на ESnext ниже этого комментария.
 // При желании, можете использовать стрелочную функцию, вместо обычной
 
-export function task12New() {}
+export const task12New = (object, firstFieldName, secondFieldName) => object[firstFieldName] && object[firstFieldName][secondFieldName];

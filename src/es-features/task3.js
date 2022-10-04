@@ -8,10 +8,13 @@
  */
 
 export function task3Old(params) {
-  return [1, 2].concat(params);
+    return [1, 2].concat(params);
 }
 
 // Напишите реализацию функции task3Old на ES6+ ниже этого комментария.
 // При желании, можете использовать стрелочную функцию, вместо обычной
 
-export function task3New() {}
+export const task3New = (params) => {
+    const res = [1, 2, ...params]
+    return res
+}

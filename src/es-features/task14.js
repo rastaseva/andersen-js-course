@@ -1,4 +1,5 @@
-﻿﻿﻿﻿/**
+﻿﻿﻿﻿
+/**
  * Написать функция, которая принимает объект, и возвращает массив с внутренними массивами, которые были созданы под каждое из свойств объекта.
  *
  * Пример вызова
@@ -7,10 +8,10 @@
  */
 
 export function task14Old(obj) {
-  return Object.keys(obj).map(k => [k, obj[k]]);
+    return Object.keys(obj).map(k => [k, obj[k]]);
 }
 
 // Напишите реализацию функции task14Old на ESnext ниже этого комментария.
 // При желании, можете использовать стрелочную функцию, вместо обычной
 
-export function task14New() {}
+export const task14New = (obj) => Object.entries(obj)
